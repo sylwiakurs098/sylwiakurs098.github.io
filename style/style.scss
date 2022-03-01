@@ -1,0 +1,154 @@
+$backgroundColor: blue;
+$buttonSize: 40px;
+body {
+    
+    margin: 0;
+    >header {
+        z-index: 1;
+        background-color:yellow; 
+        position: fixed;
+        width: 100%;
+        top: 0;
+        min-height: $buttonSize;
+        label {
+            border: 2px dashed rgb(0, 0, 0);
+            position: absolute;
+            width: $buttonSize;
+            height: $buttonSize;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            cursor: pointer;
+            div {
+                border:  2px solid rgb(0, 0, 0);
+                width: 70%;
+                transition: .5s;
+            }
+        }
+        nav {
+            position: absolute;
+            display: flex;
+            transform: scale(0);
+            transition: .5s;
+            margin-top: 50px;
+            margin-left: 5px;
+            flex-direction: column;
+            background-color: rgb(85, 85, 85);
+            height: calc(100vh - #{$buttonSize});
+            width: 100%;
+            
+            a {
+                text-decoration: none;
+                color: blue;
+                padding: 5px;
+            }
+        }
+        #toggler {
+            display: none;
+        }
+        #toggler:checked ~ nav{
+            
+            transform: scale(1);
+        }
+
+        #toggler:checked ~ label{
+            border: 2px dashed rgb(248, 0, 0);
+            div {
+                position: absolute;
+                &:nth-child(1) {
+                    transform: rotate(135deg);
+                    border-color: red;
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: rotate(-135deg);
+                }
+            }
+         
+    section {
+        header {
+            background-color: yellow;
+        }
+    }
+        }
+    }
+    >article, main {
+       display: flex;
+       flex-direction: column;
+        // min-height: calc(100vh - #{$buttonSize});
+        padding-top: $buttonSize;
+        h1, h2 {
+            margin-left: .8em;
+        }
+        section {
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;;
+            img {
+                width: 256px;
+                height: 192px;
+            }
+            p {
+                padding: 0 10%;;
+            }
+            .left,.right {
+                position: absolute;
+                top: 45%;
+                cursor: pointer;
+            }
+            .left {
+                left: 10px;
+            }
+            .right {
+                right: 10px;
+
+            }
+        }
+    }
+    footer {
+        margin-top: $buttonSize;
+        background-color: gray;
+        text-align: right;
+        padding: 10px;
+    }
+}
+
+@media(min-width: 720px) {
+    body {
+        header {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            label {
+                display: none;
+            }
+            nav {
+                position: static;
+                transform: scale(1);
+                height: unset;
+                flex-direction: row;
+                margin-top: 0;
+                width: fit-content;
+                a {
+                    color: rgb(14, 13, 13);
+                }
+                background-color: unset;
+            }
+        }
+        article, main {
+            margin: 0 20%;
+        }
+        #omnie {
+            section {
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+        }
+    }
+}

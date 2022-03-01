@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+}
+
+body > header {
+  z-index: 1;
+  background-color: yellow;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  min-height: 40px;
+}
+
+body > header label {
+  border: 2px dashed black;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+body > header label div {
+  border: 2px solid black;
+  width: 70%;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+body > header nav {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin-top: 50px;
+  margin-left: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #555555;
+  height: calc(100vh - 40px);
+  width: 100%;
+}
+
+body > header nav a {
+  text-decoration: none;
+  color: blue;
+  padding: 5px;
+}
+
+body > header #toggler {
+  display: none;
+}
+
+body > header #toggler:checked ~ nav {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+body > header #toggler:checked ~ label {
+  border: 2px dashed #f80000;
+}
+
+body > header #toggler:checked ~ label div {
+  position: absolute;
+}
+
+body > header #toggler:checked ~ label div:nth-child(1) {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  border-color: red;
+}
+
+body > header #toggler:checked ~ label div:nth-child(2) {
+  opacity: 0;
+}
+
+body > header #toggler:checked ~ label div:nth-child(3) {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+body > header #toggler:checked ~ label section header {
+  background-color: yellow;
+}
+
+body > article, body main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 40px;
+}
+
+body > article h1, body > article h2, body main h1, body main h2 {
+  margin-left: .8em;
+}
+
+body > article section, body main section {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body > article section img, body main section img {
+  width: 256px;
+  height: 192px;
+}
+
+body > article section p, body main section p {
+  padding: 0 10%;
+}
+
+body > article section .left, body > article section .right, body main section .left, body main section .right {
+  position: absolute;
+  top: 45%;
+  cursor: pointer;
+}
+
+body > article section .left, body main section .left {
+  left: 10px;
+}
+
+body > article section .right, body main section .right {
+  right: 10px;
+}
+
+body footer {
+  margin-top: 40px;
+  background-color: gray;
+  text-align: right;
+  padding: 10px;
+}
+
+@media (min-width: 720px) {
+  body header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 10px;
+  }
+  body header label {
+    display: none;
+  }
+  body header nav {
+    position: static;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    height: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: unset;
+  }
+  body header nav a {
+    color: #0e0d0d;
+  }
+  body article, body main {
+    margin: 0 20%;
+  }
+  body #omnie section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+/*# sourceMappingURL=style.css.map */
